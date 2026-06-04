@@ -1,0 +1,141 @@
+/* ══════════════════════════════════════
+   SCROLL REVEAL BASE STATES
+══════════════════════════════════════ */
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal-scale {
+  will-change: transform, opacity;
+}
+
+/* ══════════════════════════════════════
+   FLOAT ANIMATION (background shapes)
+══════════════════════════════════════ */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-18px); }
+}
+
+@keyframes floatYSlow {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+.float-anim {
+  animation: floatY 6s ease-in-out infinite;
+}
+
+.float-anim-slow {
+  animation: floatYSlow 9s ease-in-out infinite;
+}
+
+/* ══════════════════════════════════════
+   COUNT-UP ANIMATION TRIGGER CLASS
+══════════════════════════════════════ */
+.count-up-ready {
+  transition: color 0.3s ease;
+}
+
+/* ══════════════════════════════════════
+   FADE IN
+══════════════════════════════════════ */
+@keyframes showcaseFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════ */
+@media (max-width: 768px) {
+  .showcase-stage {
+    min-height: 360px;
+  }
+ 
+  .model-slot.prev  { left:  2%; }
+  .model-slot.next  { right: 2%; }
+ 
+  .product-thumb {
+    flex: 0 0 118px;
+  }
+ 
+  .product-thumb img {
+    height: 100px;
+  }
+ 
+  .stage-nav.left  { right: calc(50% + 80px); }
+  .stage-nav.right { left:  calc(50% + 80px); }
+}
+ 
+@media (max-width: 480px) {
+  .showcase-stage {
+    min-height: 300px;
+  }
+ 
+  .model-slot.prev,
+  .model-slot.next {
+    display: none; /* too cramped on small phones */
+  }
+ 
+  .stage-nav.left  { right: calc(50% + 60px); }
+  .stage-nav.right { left:  calc(50% + 60px); }
+}
+
+/* ══════════════════════════════════════
+   PROCESS LINE DRAW
+══════════════════════════════════════ */
+@keyframes drawLine {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ══════════════════════════════════════
+   STAGGER DELAY HELPERS
+══════════════════════════════════════ */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; }
+.delay-7 { transition-delay: 0.7s; }
+.delay-8 { transition-delay: 0.8s; }
+
+/* ══════════════════════════════════════
+   SWIPER OVERRIDES
+══════════════════════════════════════ */
+.swiper-pagination-bullet {
+  background: var(--navy) !important;
+  opacity: 0.3;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--teal) !important;
+  opacity: 1;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--teal) !important;
+}
+
+/* ══════════════════════════════════════
+   REDUCED MOTION
+══════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1;
+    transform: none;
+  }
+}

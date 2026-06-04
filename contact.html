@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contact Us — New Star Enterprises | Chennai Uniform Manufacturer</title>
+  <meta name="description" content="Contact New Star Enterprises via WhatsApp, phone or email. Chennai-based uniform manufacturer. We reply within 2 hours on WhatsApp." />
+
+  <link rel="canonical" href="https://newstarenterprises.in/contact.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <style>
+    .contact-hero {
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+      padding: 140px 0 var(--space-16);
+      text-align: center;
+    }
+
+    .contact-hero h1 {
+      font-size: var(--text-4xl);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: var(--space-4);
+    }
+
+    .contact-hero p {
+      font-size: var(--text-lg);
+      color: rgba(255,255,255,0.75);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Contact Cards */
+    .contact-section {
+      background: var(--off-white);
+      padding: var(--space-24) 0;
+    }
+
+    .contact-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-6);
+      margin-bottom: var(--space-16);
+    }
+
+    .contact-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8) var(--space-6);
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--light-gray);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      color: inherit;
+    }
+
+    .contact-card-icon {
+      font-size: 2.5rem;
+      margin-bottom: var(--space-4);
+    }
+
+    .contact-card h3 {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: var(--space-3);
+    }
+
+    .contact-card p {
+      font-size: var(--text-sm);
+      color: var(--gray);
+      margin-bottom: var(--space-4);
+      line-height: 1.6;
+    }
+
+    .contact-card .contact-value {
+      font-size: var(--text-base);
+      font-weight: 600;
+      color: var(--teal);
+    }
+
+    .contact-card.whatsapp-card {
+      border: 2px solid rgba(37,211,102,0.3);
+      background: linear-gradient(135deg,
+        rgba(37,211,102,0.04),
+        rgba(18,140,126,0.04)
+      );
+    }
+
+    .contact-card.whatsapp-card h3 {
+      color: #128c7e;
+    }
+
+    .contact-card.whatsapp-card .contact-value {
+      color: #25d366;
+    }
+
+    /* Response Promise */
+    .response-promise {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8) var(--space-10);
+      display: flex;
+      align-items: center;
+      gap: var(--space-6);
+      box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--teal);
+      margin-bottom: var(--space-16);
+    }
+
+    .promise-icon {
+      font-size: 2.5rem;
+      flex-shrink: 0;
+    }
+
+    .promise-text h4 {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: var(--space-2);
+    }
+
+    .promise-text p {
+      font-size: var(--text-sm);
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* Map Section */
+    .map-section {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .map-header {
+      padding: var(--space-8) var(--space-8) var(--space-5);
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .map-header h3 {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: var(--space-2);
+    }
+
+    .map-header p {
+      font-size: var(--text-sm);
+      color: var(--gray);
+    }
+
+    .map-embed {
+      width: 100%;
+      height: 400px;
+      border: none;
+      display: block;
+    }
+
+    /* Business Hours */
+    .hours-section {
+      background: var(--navy-dark);
+      padding: var(--space-16) 0;
+    }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-12);
+      align-items: center;
+    }
+
+    .hours-text h2 {
+      color: var(--white);
+      margin-bottom: var(--space-6);
+    }
+
+    .hours-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .hours-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-3) var(--space-4);
+      background: rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .hours-day {
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .hours-time {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--teal-light);
+    }
+
+    .hours-whatsapp {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+    }
+
+    .hours-whatsapp h3 {
+      color: var(--white);
+      margin-bottom: var(--space-4);
+    }
+
+    .hours-whatsapp p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: var(--space-6);
+      font-size: var(--text-sm);
+      line-height: 1.7;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .contact-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact-hero h1 { font-size: var(--text-3xl); }
+
+      .contact-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .response-promise {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hours-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .contact-cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-hero h1 { font-size: var(--text-2xl); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="navbar-logo" aria-label="New Star Enterprises Home">
+        <div class="navbar-logo-text">
+          <span class="brand-name">New Star Enterprises</span>
+          <span class="brand-tagline">Premium Uniform Manufacturer</span>
+        </div>
+      </a>
+      <div class="navbar-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#products">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <a href="https://wa.me/919940666626" target="_blank"
+         rel="noopener noreferrer" class="navbar-cta">Get Quote</a>
+      <button class="hamburger" id="hamburger"
+              aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="index.html#products">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://wa.me/919940666626" target="_blank"
+       rel="noopener noreferrer" class="mobile-cta">Get Quote</a>
+  </div>
+
+  <!-- CONTACT HERO -->
+  <section class="contact-hero" aria-label="Contact page header">
+    <div class="container">
+      <nav class="breadcrumb" style="justify-content:center; margin-bottom:var(--space-5);"
+           aria-label="Breadcrumb">
+        <a href="index.html" style="color:rgba(255,255,255,0.6);">Home</a>
+        <span aria-hidden="true" style="color:rgba(255,255,255,0.3);">›</span>
+        <span aria-current="page" style="color:var(--teal-light);">Contact</span>
+      </nav>
+      <h1>Get in Touch</h1>
+      <p>
+        We reply within 2 hours on WhatsApp.
+        No forms. No wait. Just a conversation.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section" aria-label="Contact information">
+    <div class="container">
+
+      <!-- 4 Contact Cards -->
+      <div class="contact-cards-grid">
+
+        <a href="tel:+919940666626" class="contact-card reveal" data-delay="0">
+          <div class="contact-card-icon">📞</div>
+          <h3>Phone</h3>
+          <p>Call us directly for urgent enquiries or bulk order discussions.</p>
+          <div class="contact-value">+91 99406 66626</div>
+        </a>
+
+        <a href="mailto:newstarenterprises@gmail.com"
+           class="contact-card reveal" data-delay="0.1">
+          <div class="contact-card-icon">✉️</div>
+          <h3>Email</h3>
+          <p>Send us your requirements and we will respond with a quote.</p>
+          <div class="contact-value">newstarenterprises@gmail.com</div>
+        </a>
+
+        <a href="https://wa.me/919940666626" target="_blank"
+           rel="noopener noreferrer"
+           class="contact-card whatsapp-card reveal" data-delay="0.2">
+          <div class="contact-card-icon">💬</div>
+          <h3>WhatsApp</h3>
+          <p>Fastest way to reach us. Send your order details and get a quote instantly.</p>
+          <div class="contact-value">Chat Now →</div>
+        </a>
+
+        <div class="contact-card reveal" data-delay="0.3">
+          <div class="contact-card-icon">📍</div>
+          <h3>Location</h3>
+          <p>We are based in Chennai, Tamil Nadu. Pan India shipping available.</p>
+          <div class="contact-value">Chennai, Tamil Nadu</div>
+        </div>
+
+      </div>
+
+      <!-- Response Promise -->
+      <div class="response-promise reveal">
+        <div class="promise-text">
+          <h4>We Reply Within 2 Hours on WhatsApp</h4>
+          <p>
+            Send us your product choice, size, quantity and any special requirements
+            via WhatsApp. Our team responds with pricing and availability within
+            2 business hours — Monday to Saturday, 9 AM to 6 PM.
+          </p>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="map-section reveal">
+        <div class="map-header">
+          <h3>📍 Find Us in Chennai</h3>
+          <p>New Star Enterprises — Chennai, Tamil Nadu, India</p>
+        </div>
+        <iframe
+          class="map-embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497698.9974841319!2d79.87946!3d13.05245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e61a70b6863d433!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          title="New Star Enterprises location in Chennai, Tamil Nadu">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BUSINESS HOURS -->
+  <section class="hours-section" aria-label="Business hours">
+    <div class="container">
+      <div class="hours-grid">
+
+        <div class="hours-text reveal-left">
+          <h2>Business Hours</h2>
+          <div class="hours-list">
+            <div class="hours-item">
+              <span class="hours-day">Monday – Friday</span>
+              <span class="hours-time">9:00 AM – 6:00 PM</span>
+            </div>
+            <div class="hours-item">
+              <span class="hours-day">Saturday</span>
+              <span class="hours-time">9:00 AM – 6:00 PM</span>
+            </div>
+            <div class="hours-item">
+              <span class="hours-day">Sunday</span>
+              <span class="hours-time">Closed</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hours-whatsapp reveal-right">
+          <h3>💬 WhatsApp Orders</h3>
+          <p>
+            Our WhatsApp order flow is available 24/7 — send your order
+            details any time and we will process it the next business morning.
+            For urgent bulk orders, call us directly during business hours.
+          </p>
+          <a href="https://wa.me/919940666626" target="_blank"
+             rel="noopener noreferrer" class="btn btn-whatsapp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                 viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Start WhatsApp Chat
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="navbar-logo-text">
+            <span class="brand-name"
+                  style="font-size:var(--text-lg);color:var(--white);">
+              New Star Enterprises
+            </span>
+            <span class="brand-tagline">Premium Uniform Manufacturer</span>
+          </div>
+          <p>Chennai-based manufacturer of medical, culinary and professional uniforms. Serving 500+ hospitals across India since 2014.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="index.html#products">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item">
+            <span>+91 99406 66626</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>newstarenterprises@gmail.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>Chennai, Tamil Nadu, India</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>Mon–Sat: 9:00 AM – 6:00 PM</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 New Star Enterprises. All rights reserved. | Chennai, Tamil Nadu</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/919940666626" target="_blank"
+     rel="noopener noreferrer" class="whatsapp-float"
+     aria-label="Chat with us on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+         fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script type="module" src="../js/main.js"></script>
+  <script type="module" src="../js/animations.js"></script>
+  <script type="module" src="../js/product.js"></script>
+
+</body>
+</html>

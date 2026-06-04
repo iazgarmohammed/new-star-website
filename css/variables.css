@@ -1,0 +1,64 @@
+:root {
+  /* Primary */
+  --navy: #1a3a5c;
+  --navy-light: #254d7a;
+  --navy-dark: #0d2a45;
+
+  /* Accent */
+  --teal: #1a8c6e;
+  --teal-light: #22b58a;
+  --teal-glow: rgba(26, 140, 110, 0.25);
+
+  /* Neutrals */
+  --white: #ffffff;
+  --off-white: #f4f8fb;
+  --light-gray: #e8edf2;
+  --gray: #6b7280;
+  --text-dark: #111827;
+  --text-mid: #374151;
+
+  /* Functional */
+  --error: #ef4444;
+  --success: #10b981;
+  --warning: #f59e0b;
+
+  /* Typography */
+  --font-primary: 'Poppins', sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 50px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(26, 58, 92, 0.08);
+  --shadow: 0 4px 24px rgba(26, 58, 92, 0.10);
+  --shadow-hover: 0 8px 40px rgba(26, 58, 92, 0.18);
+  --shadow-float: 0 16px 60px rgba(26, 58, 92, 0.22);
+  --shadow-teal: 0 4px 20px rgba(26, 140, 110, 0.35);
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-30: 120px;
+}

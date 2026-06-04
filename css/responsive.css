@@ -1,0 +1,185 @@
+/* ══════════════════════════════════════
+   LAPTOP — max 1024px
+══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  h1 { font-size: var(--text-4xl); }
+  h2 { font-size: var(--text-3xl); }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer-brand {
+    grid-column: span 2;
+  }
+
+  .about-teaser-grid {
+    gap: var(--space-10);
+  }
+}
+
+/* ══════════════════════════════════════
+   TABLET — max 768px
+══════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  h1 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-2xl); }
+
+  /* Navbar */
+  .navbar-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hero */
+  .hero-badges {
+    display: none;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Products */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  /* Serve */
+  .serve-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Process */
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+
+  .process-steps::before {
+    display: none;
+  }
+
+  /* About Teaser */
+  .about-teaser-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  .about-visual-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-visual-card:first-child {
+    grid-row: span 1;
+    min-height: 200px;
+  }
+
+  /* CTA Banner */
+  .cta-banner h2 {
+    font-size: var(--text-3xl);
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer-brand {
+    grid-column: span 1;
+  }
+}
+
+/* ══════════════════════════════════════
+   MOBILE — max 520px
+══════════════════════════════════════ */
+@media (max-width: 520px) {
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: var(--text-2xl); }
+
+  /* Products */
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  .stat-item {
+    padding: var(--space-5);
+  }
+
+  .stat-number {
+    font-size: var(--text-3xl);
+  }
+
+  /* Process */
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+
+  /* Serve */
+  .serve-card {
+    padding: var(--space-6);
+  }
+
+  /* CTA Banner */
+  .cta-banner {
+    padding: var(--space-12) 0;
+  }
+
+  .cta-banner h2 {
+    font-size: var(--text-2xl);
+  }
+
+  /* WhatsApp Float */
+  .whatsapp-float {
+    bottom: var(--space-5);
+    right: var(--space-5);
+    width: 52px;
+    height: 52px;
+  }
+
+  /* Testimonials */
+  .testimonial-card {
+    padding: var(--space-6);
+  }
+
+  /* Footer */
+  .footer {
+    padding: var(--space-12) 0 var(--space-6);
+  }
+}
