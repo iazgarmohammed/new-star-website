@@ -25,6 +25,24 @@
   .about-teaser-grid {
     gap: var(--space-10);
   }
+
+  /* Product page */
+  .product-detail-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .product-image-col {
+    position: static;
+  }
+
+  .fabric-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .related-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* ══════════════════════════════════════
@@ -32,10 +50,13 @@
 ══════════════════════════════════════ */
 @media (max-width: 768px) {
 
+  /* ── Typography ── */
   h1 { font-size: var(--text-3xl); }
   h2 { font-size: var(--text-2xl); }
+  .section-title { font-size: var(--text-2xl); }
+  .section-subtitle { font-size: var(--text-base); margin-bottom: var(--space-8); }
 
-  /* Navbar */
+  /* ── Navbar ── */
   .navbar-links {
     display: none;
   }
@@ -44,7 +65,7 @@
     display: flex;
   }
 
-  /* Hero */
+  /* ── Hero ── */
   .hero-badges {
     display: none;
   }
@@ -59,23 +80,61 @@
     max-width: 320px;
   }
 
-  /* Stats */
+  /* ── Stats ── */
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Products */
+  /* ── Products ── */
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-4);
   }
 
-  /* Serve */
-  .serve-grid {
-    grid-template-columns: 1fr;
+  /* ── Showcase Stage ── */
+  .showcase-stage {
+    min-height: 360px;
   }
 
-  /* Process */
+  .model-slot.prev {
+    left: 5%;
+    transform: scale(0.65);
+    opacity: 0.35;
+  }
+
+  .model-slot.next {
+    right: 5%;
+    transform: scale(0.65);
+    opacity: 0.35;
+  }
+
+  .model-slot img {
+    max-width: 240px;
+  }
+
+  .stage-nav.left {
+    right: calc(50% + 120px) !important;
+  }
+
+  .stage-nav.right {
+    left: calc(50% + 120px) !important;
+  }
+
+  .product-thumb {
+    flex: 0 0 120px;
+  }
+
+  /* ── Serve Section ── */
+  .serve-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .serve-card {
+    padding: var(--space-8);
+  }
+
+  /* ── Process ── */
   .process-steps {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-8);
@@ -85,7 +144,12 @@
     display: none;
   }
 
-  /* About Teaser */
+  /* ── Testimonials ── */
+  .testimonials-section .container > .section-header {
+    text-align: center;
+  }
+
+  /* ── About Teaser ── */
   .about-teaser-grid {
     grid-template-columns: 1fr;
     gap: var(--space-10);
@@ -100,12 +164,12 @@
     min-height: 200px;
   }
 
-  /* CTA Banner */
+  /* ── CTA Banner ── */
   .cta-banner h2 {
     font-size: var(--text-3xl);
   }
 
-  /* Footer */
+  /* ── Footer ── */
   .footer-grid {
     grid-template-columns: 1fr;
     gap: var(--space-8);
@@ -114,25 +178,145 @@
   .footer-brand {
     grid-column: span 1;
   }
+
+  /* ── Product Page ── */
+  .product-hero {
+    height: 35vh;
+    min-height: 240px;
+  }
+
+  .product-hero-content h1 {
+    font-size: var(--text-3xl);
+  }
+
+  .fabric-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .related-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ── Forms ── */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
 }
 
 /* ══════════════════════════════════════
    MOBILE — max 520px
 ══════════════════════════════════════ */
 @media (max-width: 520px) {
+
+  /* ── Base ── */
   .container {
     padding: 0 var(--space-4);
   }
 
-  h1 { font-size: 2rem; }
+  h1 { font-size: 1.875rem; }
   h2 { font-size: var(--text-2xl); }
+  .section-title { font-size: var(--text-xl); }
 
-  /* Products */
+  /* ── Navbar ── */
+  .navbar {
+    padding: var(--space-4) 0;
+  }
+
+  .navbar-logo img {
+    height: 36px;
+  }
+
+  .navbar-logo-text .brand-name {
+    font-size: var(--text-sm);
+  }
+
+  .navbar-logo-text .brand-tagline {
+    display: none;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    min-height: 100svh;
+    align-items: center;
+  }
+
+  .hero-content {
+    padding: 0 var(--space-4);
+  }
+
+  .hero h1 {
+    font-size: 1.875rem;
+    line-height: 1.2;
+  }
+
+  .hero-sub {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-8);
+  }
+
+  .hero-badge {
+    font-size: var(--text-xs);
+    padding: 5px var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+
+  /* ── Products ── */
   .products-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Stats */
+  /* ── Product Showcase ── */
+  .product-showcase {
+    padding: 48px 0 40px;
+  }
+
+  .showcase-stage {
+    min-height: 280px;
+    border-radius: 12px;
+  }
+
+  .model-slot.active {
+    height: 85%;
+  }
+
+  .model-slot.prev,
+  .model-slot.next {
+    display: none;
+  }
+
+  .model-slot img {
+    max-width: 200px;
+  }
+
+  .stage-nav.left {
+    right: auto !important;
+    left: var(--space-3) !important;
+  }
+
+  .stage-nav.right {
+    left: auto !important;
+    right: var(--space-3) !important;
+  }
+
+  .stage-meta {
+    bottom: 16px;
+  }
+
+  .active-product-name {
+    font-size: 0.875rem;
+    padding: 6px 14px;
+  }
+
+  .product-thumb {
+    flex: 0 0 100px;
+  }
+
+  .product-thumb img {
+    height: 90px;
+  }
+
+  /* ── Stats ── */
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-4);
@@ -146,17 +330,78 @@
     font-size: var(--text-3xl);
   }
 
-  /* Process */
-  .process-steps {
-    grid-template-columns: 1fr;
+  /* ── Serve Section ── */
+  .serve-section {
+    padding: var(--space-16) 0;
   }
 
-  /* Serve */
+  .serve-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+    margin-top: var(--space-8);
+  }
+
   .serve-card {
     padding: var(--space-6);
   }
 
-  /* CTA Banner */
+  .serve-card h3 {
+    font-size: var(--text-xl);
+  }
+
+  /* ── Process ── */
+  .process-section {
+    padding: var(--space-16) 0;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .step-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  /* ── Testimonials ── */
+  .testimonials-section {
+    padding: var(--space-16) 0;
+  }
+
+  .testimonial-card {
+    padding: var(--space-6);
+  }
+
+  /* ── About Teaser ── */
+  .about-teaser-section {
+    padding: var(--space-16) 0;
+  }
+
+  .about-teaser-text p {
+    font-size: var(--text-base);
+  }
+
+  .feature-pills {
+    gap: var(--space-2);
+  }
+
+  .about-visual-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-visual-card {
+    height: 200px;
+  }
+
+  .about-visual-card:first-child {
+    grid-row: span 1;
+    min-height: 200px;
+  }
+
+  /* ── CTA Banner ── */
   .cta-banner {
     padding: var(--space-12) 0;
   }
@@ -165,7 +410,11 @@
     font-size: var(--text-2xl);
   }
 
-  /* WhatsApp Float */
+  .cta-banner p {
+    font-size: var(--text-base);
+  }
+
+  /* ── WhatsApp Float ── */
   .whatsapp-float {
     bottom: var(--space-5);
     right: var(--space-5);
@@ -173,13 +422,119 @@
     height: 52px;
   }
 
-  /* Testimonials */
-  .testimonial-card {
-    padding: var(--space-6);
+  .whatsapp-float svg {
+    width: 24px;
+    height: 24px;
   }
 
-  /* Footer */
+  /* ── Footer ── */
   .footer {
     padding: var(--space-12) 0 var(--space-6);
+  }
+
+  .footer-grid {
+    gap: var(--space-8);
+  }
+
+  /* ── Product Page ── */
+  .product-hero {
+    height: 30vh;
+    min-height: 200px;
+  }
+
+  .product-hero-content h1 {
+    font-size: var(--text-2xl);
+  }
+
+  .product-hero-content p {
+    font-size: var(--text-sm);
+  }
+
+  .product-detail-section {
+    padding: var(--space-10) 0;
+  }
+
+  .product-details-col h2 {
+    font-size: var(--text-2xl);
+  }
+
+  .fabric-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .related-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .order-form {
+    padding: var(--space-6);
+    border-radius: var(--radius);
+  }
+
+  /* ── Why Us ── */
+  .why-us-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Mobile menu ── */
+  .mobile-menu a {
+    font-size: var(--text-2xl);
+  }
+
+  .mobile-menu .mobile-cta {
+    font-size: var(--text-lg) !important;
+    padding: var(--space-3) var(--space-8);
+  }
+}
+
+/* ══════════════════════════════════════
+   EXTRA SMALL — max 375px
+   (iPhone SE, small Androids)
+══════════════════════════════════════ */
+@media (max-width: 375px) {
+  .container {
+    padding: 0 var(--space-3);
+  }
+
+  h1 { font-size: 1.625rem; }
+
+  .hero h1 {
+    font-size: 1.625rem;
+  }
+
+  .hero-ctas .btn {
+    font-size: var(--text-sm);
+    padding: 12px var(--space-5);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  .stat-item {
+    padding: var(--space-4);
+  }
+
+  .stat-number {
+    font-size: var(--text-2xl);
+  }
+
+  .serve-card {
+    padding: var(--space-5);
+  }
+
+  .cta-banner h2 {
+    font-size: var(--text-xl);
+  }
+
+  .product-thumb {
+    flex: 0 0 88px;
+  }
+
+  .product-thumb img {
+    height: 76px;
   }
 }
