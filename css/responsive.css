@@ -61,6 +61,10 @@
     display: none;
   }
 
+  .navbar-cta {
+    display: none;
+  }
+
   .hamburger {
     display: flex;
   }

@@ -493,7 +493,9 @@ td.grand-total-cell {
   border-radius: var(--radius-pill);
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.4;
   flex-shrink: 0;
 }
 
