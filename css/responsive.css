@@ -61,8 +61,17 @@
     display: none;
   }
 
-  .navbar-cta {
+  .navbar-logo-text .brand-tagline {
     display: none;
+  }
+
+  .navbar-logo-text .brand-name {
+    font-size: var(--text-sm);
+  }
+
+  .navbar-cta {
+    font-size: var(--text-xs);
+    padding: 8px var(--space-3);
   }
 
   .hamburger {
