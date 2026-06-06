@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://newstarenterprises.in/sitemap.xml
+Sitemap: https://newstaruniforms.com/sitemap.xml
