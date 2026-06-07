@@ -45,6 +45,11 @@ const PRODUCTS = [
     name:   'Custom Embroidery & Logos',
     url:    'products/custom-embroidery.html',
   },
+  {
+    index:  8,
+    name:   'Surgical Gowns',
+    url:    'products/surgical-gowns.html',
+  },
 ];
 
 let currentIndex = 0;
