@@ -43,424 +43,60 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <!-- ══════════════════════════════════
-       SURGICAL GOWNS — RESPONSIVE FIXES
+       SURGICAL GOWNS — PAGE OVERRIDES
   ══════════════════════════════════ -->
   <style>
-    /* ── Portrait image: gown is tall, not wide ── */
+    /* Desktop: standard 4/3 — same as nurse uniforms */
     .product-detail-section .main-product-image {
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 4 / 3;
     }
 
-    /* ── Ensure details column never overflows ── */
-    .product-details-col {
-      min-width: 0;
-      max-width: 100%;
-      overflow-x: hidden;
-      word-break: break-word;
-    }
-
-    /* ── Trust strip wraps cleanly on narrow screens ── */
-    .trust-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 16px 0;
-    }
-
-    .trust-strip span {
-      font-size: 13px;
-      padding: 6px 10px;
-      white-space: nowrap;
-    }
-
-    /* ── Spec grid stays 2-col until very small ── */
-    .spec-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    /* ── Order form full width, no horizontal scroll ── */
-    .order-form {
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    /* ── Matrix scroll wrapper contained ── */
-    .matrix-scroll-wrap {
-      width: 100%;
-      max-width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    /* ════════════════════════════════════
-       TABLET  (≤ 1024px)
-    ════════════════════════════════════ */
+    /* Tablet: center and cap the image column */
     @media (max-width: 1024px) {
-      /* Stack image above details */
-      .product-detail-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
       .product-image-col {
-        position: static;
         max-width: 480px;
         margin: 0 auto;
         width: 100%;
       }
-
-      /* 4-thumb gallery stays 4-col on tablet */
-      .product-gallery {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .fabric-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .related-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .why-us-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
 
-    /* ════════════════════════════════════
-       TABLET PORTRAIT  (≤ 768px)
-    ════════════════════════════════════ */
+    /* Tablet portrait & mobile: square image, centered swatches */
     @media (max-width: 768px) {
-      .product-detail-section {
-        padding: 40px 0;
-      }
-
-      .product-image-col {
-        max-width: 360px;
-      }
-
-      /* Portrait aspect on tablet */
       .product-detail-section .main-product-image {
-        aspect-ratio: 2 / 3;
-      }
-
-      /* 4 thumbs → 2 rows of 2 */
-      .product-gallery {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 8px;
-      }
-
-      .product-details-col h2 {
-        font-size: 1.5rem;
-      }
-
-      .trust-strip span {
-        font-size: 12px;
-        padding: 5px 9px;
-      }
-
-      .spec-card {
-        padding: 16px;
-      }
-
-      .branding-content {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .branding-image {
-        display: none; /* Hide image on tablet to save space */
-      }
-
-      .fabric-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
-
-      .related-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
-
-      .why-us-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-
-      .order-form {
-        padding: 20px 16px;
-      }
-    }
-
-    /* ════════════════════════════════════
-       MOBILE  (≤ 520px)
-    ════════════════════════════════════ */
-    @media (max-width: 520px) {
-      .product-detail-section {
-        padding: 28px 0;
-      }
-
-      /* Keep portrait ratio but constrain height */
-      .product-detail-section .main-product-image {
-        aspect-ratio: 2 / 3;
-        max-height: 420px;
-      }
-
-      .product-image-col {
-        max-width: 100%;
-      }
-
-      /* On small mobile: 2 thumbs per row */
-      .product-gallery {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 6px;
-      }
-
-      .product-gallery .gallery-thumb img {
         aspect-ratio: 1 / 1;
       }
-
-      .product-details-col h2 {
-        font-size: 1.35rem;
+      .product-image-col {
+        max-width: 400px;
       }
-
-      .product-fabric-desc {
-        font-size: 0.9rem;
-      }
-
-      .product-features li {
-        font-size: 0.85rem;
-      }
-
-      .trust-strip {
-        gap: 6px;
-      }
-
-      .trust-strip span {
-        font-size: 11px;
-        padding: 4px 8px;
-      }
-
-      .spec-card {
-        padding: 14px;
-        border-radius: 12px;
-      }
-
-      .spec-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-      }
-
-      .spec-grid div strong {
-        font-size: 0.75rem;
-        color: #6b7280;
-        font-weight: 600;
-      }
-
-      .spec-grid div span {
-        font-size: 0.9rem;
-        font-weight: 700;
-        color: var(--navy, #0d2a45);
-        margin-top: 2px;
-      }
-
-      .variant-label {
-        font-size: 0.85rem;
-      }
-
       .color-swatches {
-        gap: 12px;
         justify-content: center;
-        padding: 6px 0;
       }
-
-      .swatch {
-        width: 36px;
-        height: 36px;
-      }
-
       .selected-color-name {
         text-align: center;
-        font-size: 0.85rem;
       }
-
-      .branding-showcase {
-        padding: 16px;
-        margin: 20px 0;
+      .branding-content {
+        grid-template-columns: 1fr;
       }
-
-      .branding-text h3 {
-        font-size: 1rem;
-      }
-
-      .branding-text p {
-        font-size: 0.85rem;
-      }
-
-      .branding-list li {
-        font-size: 0.85rem;
-      }
-
       .branding-image {
         display: none;
       }
-
-      .product-divider {
-        margin: 16px 0;
-      }
-
-      .custom-color-panel {
-        padding: 12px;
-      }
-
-      .custom-color-row {
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .btn-add-color {
-        width: 100%;
-        text-align: center;
-      }
-
-      .form-section-title {
-        font-size: 0.9rem;
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-
-      .total-units-badge {
-        font-size: 0.78rem;
-        padding: 2px 8px;
-      }
-
-      /* Matrix inputs: compact */
-      .matrix-qty {
-        width: 44px;
-        font-size: 0.75rem;
-        padding: 4px 4px;
-      }
-
-      .bulk-matrix thead th,
-      .bulk-matrix td {
-        padding: 6px 6px;
-        font-size: 0.72rem;
-      }
-
-      .order-summary-card {
-        padding: 16px;
-        border-radius: 12px;
-      }
-
-      .order-summary-card h3 {
-        font-size: 1rem;
-      }
-
-      .order-form {
-        padding: 16px 14px;
-        border-radius: 12px;
-      }
-
-      .form-group label {
-        font-size: 0.82rem;
-      }
-
-      .form-group input,
-      .form-group textarea {
-        font-size: 0.9rem;
-        padding: 10px 12px;
-      }
-
-      .btn-whatsapp,
-      .btn-sample {
-        font-size: 0.9rem;
-        padding: 13px 16px;
-        min-height: 48px;
-      }
-
-      .form-disclaimer {
-        font-size: 0.72rem;
-      }
-
-      /* Fabric section */
-      .fabric-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
-      .fabric-card {
-        padding: 20px 16px;
-      }
-
-      /* Related products: single column */
-      .related-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-
-      /* Why us: single column */
-      .why-us-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .why-us {
-        padding: 0 16px;
-        margin: 32px auto;
-      }
-
-      .why-card {
-        padding: 16px;
-      }
     }
 
-    /* ════════════════════════════════════
-       EXTRA SMALL  (≤ 375px)
-    ════════════════════════════════════ */
-    @media (max-width: 375px) {
+    @media (max-width: 520px) {
       .product-detail-section .main-product-image {
-        max-height: 360px;
+        aspect-ratio: 1 / 1;
       }
-
-      .product-details-col h2 {
-        font-size: 1.2rem;
+      .product-image-col {
+        max-width: 100%;
       }
-
-      .trust-strip span {
-        font-size: 10px;
-        padding: 4px 7px;
+      .color-swatches {
+        justify-content: center;
       }
-
-      .spec-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
+      .selected-color-name {
+        text-align: center;
       }
-
-      .matrix-qty {
-        width: 38px;
-        font-size: 0.7rem;
-      }
-
-      .bulk-matrix thead th,
-      .bulk-matrix td {
-        padding: 5px 4px;
-        font-size: 0.68rem;
-      }
-
-      .swatch {
-        width: 32px;
-        height: 32px;
-      }
-
-      .btn-whatsapp,
-      .btn-sample {
-        font-size: 0.85rem;
+      .branding-image {
+        display: none;
       }
     }
   </style>
@@ -659,13 +295,6 @@
               data-color-name="Sky Blue"
               data-image="../images/products/surgical-gowns/sky-blue/main.png"
               style="background: #87ceeb;">
-            </button>
-
-            <button class="swatch"
-              data-color="white"
-              data-color-name="White"
-              data-image="../images/products/surgical-gowns/white/main.png"
-              style="background:#f8f8f8;border:1px solid #ddd;">
             </button>
 
             <button class="swatch"
