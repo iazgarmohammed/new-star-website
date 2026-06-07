@@ -504,7 +504,10 @@
             <span>newstarenterprises@gmail.com</span>
           </div>
           <div class="footer-contact-item">
-            <span>Chennai, Tamil Nadu, India</span>
+            <span>No: 2, Vedhantha Murugappa Naicker Street, Selavoyal, Chennai - 600051</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>GST: 33AQIPM1035F1ZA</span>
           </div>
           <div class="footer-contact-item">
             <span>Mon–Sat: 9:00 AM – 6:00 PM</span>
@@ -538,7 +541,61 @@
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
   <script type="module" src="../js/main.js"></script>
   <script type="module" src="../js/animations.js"></script>
-  <script type="module" src="../js/product.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var orderBtn   = document.getElementById("orderBtn");
+    var nameInput  = document.getElementById("orderName");
+    var phoneInput = document.getElementById("orderPhone");
+    var qtyInput   = document.getElementById("orderQty");
+    var cityInput  = document.getElementById("orderCity");
+    var notesInput = document.getElementById("orderNotes");
+    var nameError  = document.getElementById("nameError");
+    var phoneError = document.getElementById("phoneError");
+
+    function showErr(el, msg) { if (el) { el.textContent = msg; el.style.display = "block"; } }
+    function clearErr(el)     { if (el) { el.textContent = "";  el.style.display = "none";  } }
+
+    function validateName(v)  { return /^[a-zA-Z\s]{2,50}$/.test(v.trim()); }
+    function validatePhone(v) { var c = v.replace(/\s|-/g,""); return /^[6-9]\d{9}$/.test(c); }
+
+    if (nameInput)  nameInput.addEventListener("input",  function(){ clearErr(nameError);  });
+    if (phoneInput) phoneInput.addEventListener("input",  function(){ clearErr(phoneError); });
+
+    if (orderBtn) {
+      orderBtn.addEventListener("click", function () {
+        clearErr(nameError);
+        clearErr(phoneError);
+
+        var valid = true;
+        if (!nameInput  || !validateName(nameInput.value))  { showErr(nameError,  "Please enter your full name (letters only, 2-50 chars)."); valid = false; }
+        if (!phoneInput || !validatePhone(phoneInput.value)) { showErr(phoneError, "Please enter a valid 10-digit Indian mobile number.");     valid = false; }
+        if (!valid) return;
+
+        var product = (document.getElementById("productName") || {}).textContent || "Product";
+        var name    = nameInput.value.trim();
+        var phone   = phoneInput.value.trim();
+        var qty     = qtyInput  ? (parseInt(qtyInput.value, 10) || 1) : 1;
+        var city    = cityInput  ? cityInput.value.trim()  : "";
+        var notes   = notesInput ? notesInput.value.trim() : "";
+
+        var message =
+          "Hello New Star Enterprises!\n\n" +
+          "I would like to place an order:\n\n" +
+          "*Product:* " + product + "\n" +
+          "*Quantity:* " + qty + " units\n\n" +
+          "*My Details:*\n" +
+          "*Name:* "    + name  + "\n" +
+          "*Phone:* "   + phone + "\n" +
+          "*Address:* " + (city  || "Not specified") + "\n" +
+          "*Notes:* "   + (notes || "None") + "\n\n" +
+          "Please confirm pricing and delivery timeline. Thank you!";
+
+        var waURL = "https://wa.me/919940666626?text=" + encodeURIComponent(message);
+        window.open(waURL, "_blank");
+      });
+    }
+  });
+  </script>
   <script src="../js/order-summary.js"></script>
 
   <div class="fabric-modal" id="fabricModal">
