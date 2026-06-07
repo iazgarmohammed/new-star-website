@@ -229,6 +229,100 @@ class="gallery-thumb fabric-thumb">
     </div>
 </div>
 
+     <!-- SIZE CHART -->
+          <div class="size-chart-toggle" id="sizeChartToggle" onclick="
+            var body = document.getElementById('sizeChartBody');
+            var arrow = document.getElementById('sizeChartArrow');
+            var open = body.style.display !== 'none';
+            body.style.display = open ? 'none' : 'block';
+            arrow.style.transform = open ? 'rotate(0deg)' : 'rotate(180deg)';
+          " style="
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            cursor:pointer;
+            background:var(--off-white,#f8f9fa);
+            border:1.5px solid var(--light-gray,#e2e8f0);
+            border-radius:8px;
+            padding:14px 18px;
+            margin-bottom:0;
+            user-select:none;
+          ">
+            <span style="font-size:1rem;font-weight:700;color:var(--navy,#1a2e4a);letter-spacing:0.02em;">
+              Size Chart
+            </span>
+            <svg id="sizeChartArrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                 style="color:var(--navy,#1a2e4a);transition:transform 0.3s ease;flex-shrink:0;">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+
+          <div id="sizeChartBody" style="display:none;border:1.5px solid var(--light-gray,#e2e8f0);border-top:none;border-radius:0 0 8px 8px;padding:20px 16px 16px;background:#fff;margin-bottom:4px;">
+
+            <p style="font-size:0.72rem;color:var(--gray,#64748b);margin-bottom:16px;text-align:center;">All measurements in <strong>inches</strong></p>
+
+            <!-- TOP -->
+            <div style="display:inline-block;border:1.5px solid var(--navy,#1a2e4a);border-radius:4px;padding:4px 22px;margin:0 auto 12px;display:flex;justify-content:center;">
+              <span style="font-weight:700;font-size:0.85rem;color:var(--navy,#1a2e4a);letter-spacing:0.08em;">TOP</span>
+            </div>
+
+            <div style="overflow-x:auto;margin-bottom:24px;">
+              <table style="width:100%;border-collapse:collapse;font-size:0.8rem;">
+                <thead>
+                  <tr style="background:var(--off-white,#f8f9fa);">
+                    <th style="border:1px solid #d1d5db;padding:8px 10px;text-align:center;font-weight:700;color:var(--navy,#1a2e4a);">SIZE</th>
+                    <th style="border:1px solid #d1d5db;padding:8px 10px;text-align:center;font-weight:700;color:var(--navy,#1a2e4a);">SHOULDER</th>
+                    <th style="border:1px solid #d1d5db;padding:8px 10px;text-align:center;font-weight:700;color:var(--navy,#1a2e4a);">CHEST</th>
+                    <th style="border:1px solid #d1d5db;padding:8px 10px;text-align:center;font-weight:700;color:var(--navy,#1a2e4a);">LENGTH</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;font-weight:600;">XXS</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">13.5</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">36</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">26</td></tr>
+                  <tr style="background:#fafbfc;"><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;font-weight:600;">XS</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">14</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">38</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">27</td></tr>
+                  <tr><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;font-weight:600;">S</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">16</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">40</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">27.5</td></tr>
+                  <tr style="background:#fafbfc;"><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;font-weight:600;">M</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">17</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">44</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">28</td></tr>
+                  <tr><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;font-weight:600;">L</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">18</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">47</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">29</td></tr>
+                  <tr style="background:#fafbfc;"><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;font-weight:600;">XL</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">19.5</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">49</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">29.5</td></tr>
+                  <tr><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;font-weight:600;">XXL</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">20</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">50</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">30</td></tr>
+                  <tr style="background:#fafbfc;"><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;font-weight:600;">3XL</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">21</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">52</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">30</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- BOTTOM -->
+            <div style="display:flex;justify-content:center;margin-bottom:12px;">
+              <div style="border:1.5px solid var(--navy,#1a2e4a);border-radius:4px;padding:4px 22px;">
+                <span style="font-weight:700;font-size:0.85rem;color:var(--navy,#1a2e4a);letter-spacing:0.08em;">BOTTOM</span>
+              </div>
+            </div>
+
+            <div style="overflow-x:auto;">
+              <table style="width:100%;border-collapse:collapse;font-size:0.8rem;">
+                <thead>
+                  <tr style="background:var(--off-white,#f8f9fa);">
+                    <th style="border:1px solid #d1d5db;padding:8px 10px;text-align:center;font-weight:700;color:var(--navy,#1a2e4a);">SIZE</th>
+                    <th style="border:1px solid #d1d5db;padding:8px 10px;text-align:center;font-weight:700;color:var(--navy,#1a2e4a);">HIP</th>
+                    <th style="border:1px solid #d1d5db;padding:8px 10px;text-align:center;font-weight:700;color:var(--navy,#1a2e4a);">LENGTH</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;font-weight:600;">XXS</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">26</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">39</td></tr>
+                  <tr style="background:#fafbfc;"><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;font-weight:600;">XS</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">28</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">39</td></tr>
+                  <tr><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;font-weight:600;">S</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">30</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">40</td></tr>
+                  <tr style="background:#fafbfc;"><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;font-weight:600;">M</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">32</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">40</td></tr>
+                  <tr><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;font-weight:600;">L</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">34</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">41</td></tr>
+                  <tr style="background:#fafbfc;"><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;font-weight:600;">XL</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">36</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">41</td></tr>
+                  <tr><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;font-weight:600;">XXL</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">38</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">42</td></tr>
+                  <tr style="background:#fafbfc;"><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;font-weight:600;">3XL</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">40</td><td style="border:1px solid #d1d5db;padding:7px 10px;text-align:center;">42</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+          <!-- /SIZE CHART -->
+
           <div class="product-divider"></div>
 
           <!-- Color Swatches -->
@@ -660,7 +754,7 @@ class="gallery-thumb fabric-thumb">
             <span>+91 99406 66626</span>
           </div>
           <div class="footer-contact-item">
-            <span>newstarenterprises@gmail.com</span>
+            <span>newstartailors@gmail.com</span>
           </div>
           <div class="footer-contact-item">
             <span>No: 2, Vedhantha Murugappa Naicker Street, Selavoyal, Chennai - 600051</span>
