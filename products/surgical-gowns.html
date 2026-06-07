@@ -41,6 +41,429 @@
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- ══════════════════════════════════
+       SURGICAL GOWNS — RESPONSIVE FIXES
+  ══════════════════════════════════ -->
+  <style>
+    /* ── Portrait image: gown is tall, not wide ── */
+    .product-detail-section .main-product-image {
+      aspect-ratio: 3 / 4;
+    }
+
+    /* ── Ensure details column never overflows ── */
+    .product-details-col {
+      min-width: 0;
+      max-width: 100%;
+      overflow-x: hidden;
+      word-break: break-word;
+    }
+
+    /* ── Trust strip wraps cleanly on narrow screens ── */
+    .trust-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0;
+    }
+
+    .trust-strip span {
+      font-size: 13px;
+      padding: 6px 10px;
+      white-space: nowrap;
+    }
+
+    /* ── Spec grid stays 2-col until very small ── */
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    /* ── Order form full width, no horizontal scroll ── */
+    .order-form {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* ── Matrix scroll wrapper contained ── */
+    .matrix-scroll-wrap {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* ════════════════════════════════════
+       TABLET  (≤ 1024px)
+    ════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      /* Stack image above details */
+      .product-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .product-image-col {
+        position: static;
+        max-width: 480px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      /* 4-thumb gallery stays 4-col on tablet */
+      .product-gallery {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .fabric-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-us-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* ════════════════════════════════════
+       TABLET PORTRAIT  (≤ 768px)
+    ════════════════════════════════════ */
+    @media (max-width: 768px) {
+      .product-detail-section {
+        padding: 40px 0;
+      }
+
+      .product-image-col {
+        max-width: 360px;
+      }
+
+      /* Portrait aspect on tablet */
+      .product-detail-section .main-product-image {
+        aspect-ratio: 2 / 3;
+      }
+
+      /* 4 thumbs → 2 rows of 2 */
+      .product-gallery {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+      }
+
+      .product-details-col h2 {
+        font-size: 1.5rem;
+      }
+
+      .trust-strip span {
+        font-size: 12px;
+        padding: 5px 9px;
+      }
+
+      .spec-card {
+        padding: 16px;
+      }
+
+      .branding-content {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .branding-image {
+        display: none; /* Hide image on tablet to save space */
+      }
+
+      .fabric-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .why-us-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .order-form {
+        padding: 20px 16px;
+      }
+    }
+
+    /* ════════════════════════════════════
+       MOBILE  (≤ 520px)
+    ════════════════════════════════════ */
+    @media (max-width: 520px) {
+      .product-detail-section {
+        padding: 28px 0;
+      }
+
+      /* Keep portrait ratio but constrain height */
+      .product-detail-section .main-product-image {
+        aspect-ratio: 2 / 3;
+        max-height: 420px;
+      }
+
+      .product-image-col {
+        max-width: 100%;
+      }
+
+      /* On small mobile: 2 thumbs per row */
+      .product-gallery {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+      }
+
+      .product-gallery .gallery-thumb img {
+        aspect-ratio: 1 / 1;
+      }
+
+      .product-details-col h2 {
+        font-size: 1.35rem;
+      }
+
+      .product-fabric-desc {
+        font-size: 0.9rem;
+      }
+
+      .product-features li {
+        font-size: 0.85rem;
+      }
+
+      .trust-strip {
+        gap: 6px;
+      }
+
+      .trust-strip span {
+        font-size: 11px;
+        padding: 4px 8px;
+      }
+
+      .spec-card {
+        padding: 14px;
+        border-radius: 12px;
+      }
+
+      .spec-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .spec-grid div strong {
+        font-size: 0.75rem;
+        color: #6b7280;
+        font-weight: 600;
+      }
+
+      .spec-grid div span {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--navy, #0d2a45);
+        margin-top: 2px;
+      }
+
+      .variant-label {
+        font-size: 0.85rem;
+      }
+
+      .color-swatches {
+        gap: 12px;
+        justify-content: flex-start;
+        padding: 6px 0;
+      }
+
+      .swatch {
+        width: 36px;
+        height: 36px;
+      }
+
+      .selected-color-name {
+        text-align: left;
+        font-size: 0.85rem;
+      }
+
+      .branding-showcase {
+        padding: 16px;
+        margin: 20px 0;
+      }
+
+      .branding-text h3 {
+        font-size: 1rem;
+      }
+
+      .branding-text p {
+        font-size: 0.85rem;
+      }
+
+      .branding-list li {
+        font-size: 0.85rem;
+      }
+
+      .branding-image {
+        display: none;
+      }
+
+      .product-divider {
+        margin: 16px 0;
+      }
+
+      .custom-color-panel {
+        padding: 12px;
+      }
+
+      .custom-color-row {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .btn-add-color {
+        width: 100%;
+        text-align: center;
+      }
+
+      .form-section-title {
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .total-units-badge {
+        font-size: 0.78rem;
+        padding: 2px 8px;
+      }
+
+      /* Matrix inputs: compact */
+      .matrix-qty {
+        width: 44px;
+        font-size: 0.75rem;
+        padding: 4px 4px;
+      }
+
+      .bulk-matrix thead th,
+      .bulk-matrix td {
+        padding: 6px 6px;
+        font-size: 0.72rem;
+      }
+
+      .order-summary-card {
+        padding: 16px;
+        border-radius: 12px;
+      }
+
+      .order-summary-card h3 {
+        font-size: 1rem;
+      }
+
+      .order-form {
+        padding: 16px 14px;
+        border-radius: 12px;
+      }
+
+      .form-group label {
+        font-size: 0.82rem;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+      }
+
+      .btn-whatsapp,
+      .btn-sample {
+        font-size: 0.9rem;
+        padding: 13px 16px;
+        min-height: 48px;
+      }
+
+      .form-disclaimer {
+        font-size: 0.72rem;
+      }
+
+      /* Fabric section */
+      .fabric-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .fabric-card {
+        padding: 20px 16px;
+      }
+
+      /* Related products: single column */
+      .related-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      /* Why us: single column */
+      .why-us-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .why-us {
+        padding: 0 16px;
+        margin: 32px auto;
+      }
+
+      .why-card {
+        padding: 16px;
+      }
+    }
+
+    /* ════════════════════════════════════
+       EXTRA SMALL  (≤ 375px)
+    ════════════════════════════════════ */
+    @media (max-width: 375px) {
+      .product-detail-section .main-product-image {
+        max-height: 360px;
+      }
+
+      .product-details-col h2 {
+        font-size: 1.2rem;
+      }
+
+      .trust-strip span {
+        font-size: 10px;
+        padding: 4px 7px;
+      }
+
+      .spec-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+
+      .matrix-qty {
+        width: 38px;
+        font-size: 0.7rem;
+      }
+
+      .bulk-matrix thead th,
+      .bulk-matrix td {
+        padding: 5px 4px;
+        font-size: 0.68rem;
+      }
+
+      .swatch {
+        width: 32px;
+        height: 32px;
+      }
+
+      .btn-whatsapp,
+      .btn-sample {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
 </head>
 
 <body data-product="surgical-gowns">
@@ -313,96 +736,98 @@
           <p class="custom-color-hint">
             After clicking "Add Color", a new column for your custom colour will appear in the order table below.
           </p>
-        </div>
-
-        <div class="product-divider"></div>
-
-        <div class="order-process">
-
-          <!-- Bulk Order Matrix -->
-          <div class="form-section-title">
-            <span class="icon">📦</span>
-            Bulk Order Matrix
-            <span class="total-units-badge">
-              Total Units: <strong id="totalUnits">0</strong>
-            </span>
-          </div>
-
-          <div class="matrix-scroll-wrap">
-            <table id="bulkMatrix" class="bulk-matrix"></table>
-          </div>
-
-          <p class="matrix-hint">
-            Enter quantities per size and colour. Leave blank for zero.
-          </p>
 
           <div class="product-divider"></div>
 
-          <div class="order-summary-card">
-            <h3>Order Summary</h3>
-            <div class="summary-item">
-              <span>Total Units</span>
-              <strong id="summaryTotalUnits">0</strong>
-            </div>
-          </div>
+          <div class="order-process">
 
-          <!-- Contact Fields -->
-          <div class="form-section-title">
-            <span class="icon">📋</span>
-            Your Details
-          </div>
-
-          <div class="order-form" id="orderForm">
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="orderName">Your Name *</label>
-                <input type="text" id="orderName" name="name"
-                       autocomplete="name" required />
-                <span class="field-error" id="nameError"></span>
-              </div>
-              <div class="form-group">
-                <label for="orderPhone">Phone Number *</label>
-                <input type="tel" id="orderPhone" name="phone"
-                       autocomplete="tel" required />
-                <span class="field-error" id="phoneError"></span>
-              </div>
+            <!-- Bulk Order Matrix -->
+            <div class="form-section-title">
+              <span class="icon">📦</span>
+              Bulk Order Matrix
+              <span class="total-units-badge">
+                Total Units: <strong id="totalUnits">0</strong>
+              </span>
             </div>
 
-            <div class="form-group">
-              <label for="orderCity">City / State</label>
-              <input type="text" id="orderCity" name="city"
-                     autocomplete="address-level2" />
+            <div class="matrix-scroll-wrap">
+              <table id="bulkMatrix" class="bulk-matrix"></table>
             </div>
 
-            <div class="form-group">
-              <label for="orderNotes">Special Requirements</label>
-              <textarea id="orderNotes" name="notes" rows="3"
-                        placeholder="Embroidery details, size chart requests, bulk pricing query..."></textarea>
-            </div>
-
-            <!-- Primary: Order via WhatsApp -->
-            <button type="button" class="btn btn-whatsapp btn-full" id="orderBtn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-                   viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
-              Request for Quotation
-            </button>
-
-            <!-- Secondary: Request Sample -->
-            <button type="button" class="btn btn-sample btn-full" id="sampleBtn">
-              Request a Physical Sample or Fabric Swatch
-            </button>
-
-            <p class="form-disclaimer">
-              Clicking "Order" opens WhatsApp with your bulk order pre-filled.
-              "Request Sample" sends a sample enquiry instead.
-              You can review before sending.
+            <p class="matrix-hint">
+              Enter quantities per size and colour. Leave blank for zero.
             </p>
 
+            <div class="product-divider"></div>
+
+            <div class="order-summary-card">
+              <h3>Order Summary</h3>
+              <div class="summary-item">
+                <span>Total Units</span>
+                <strong id="summaryTotalUnits">0</strong>
+              </div>
+            </div>
+
+            <!-- Contact Fields -->
+            <div class="form-section-title">
+              <span class="icon">📋</span>
+              Your Details
+            </div>
+
+            <div class="order-form" id="orderForm">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="orderName">Your Name *</label>
+                  <input type="text" id="orderName" name="name"
+                         autocomplete="name" required />
+                  <span class="field-error" id="nameError"></span>
+                </div>
+                <div class="form-group">
+                  <label for="orderPhone">Phone Number *</label>
+                  <input type="tel" id="orderPhone" name="phone"
+                         autocomplete="tel" required />
+                  <span class="field-error" id="phoneError"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="orderCity">City / State</label>
+                <input type="text" id="orderCity" name="city"
+                       autocomplete="address-level2" />
+              </div>
+
+              <div class="form-group">
+                <label for="orderNotes">Special Requirements</label>
+                <textarea id="orderNotes" name="notes" rows="3"
+                          placeholder="Embroidery details, size chart requests, bulk pricing query..."></textarea>
+              </div>
+
+              <!-- Primary: Order via WhatsApp -->
+              <button type="button" class="btn btn-whatsapp btn-full" id="orderBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                     viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Request for Quotation
+              </button>
+
+              <!-- Secondary: Request Sample -->
+              <button type="button" class="btn btn-sample btn-full" id="sampleBtn">
+                Request a Physical Sample or Fabric Swatch
+              </button>
+
+              <p class="form-disclaimer">
+                Clicking "Order" opens WhatsApp with your bulk order pre-filled.
+                "Request Sample" sends a sample enquiry instead.
+                You can review before sending.
+              </p>
+
+            </div>
+            <!-- /order-form -->
+
           </div>
-          <!-- /order-form -->
+          <!-- /order-process -->
 
         </div>
         <!-- /product-details-col -->
